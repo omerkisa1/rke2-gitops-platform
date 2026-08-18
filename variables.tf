@@ -1,0 +1,9 @@
+variable "portvmind_username" { type = string }
+variable "portvmind_password" { type = string }
+variable "tenant_id" { type = string }
+variable "ubuntu_image_id" { type = string }
+variable "standard_flavor_id" { type = string }
+variable "micro_flavor_id" { type = string }
+variable "small_flavor_id" { type = string }
+variable "medium_flavor_id" { type = string }
+variable "external_network_id" { type = string }
