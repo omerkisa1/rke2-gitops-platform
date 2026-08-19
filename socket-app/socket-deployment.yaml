@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: socket-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: socket-app
+  template:
+    metadata:
+      labels:
+        app: socket-app
+    spec:
+      containers:
+      - name: socket-app
+        image: omerkisa1/socket-app:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8765
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8765
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8765
+          initialDelaySeconds: 10
+          periodSeconds: 10
