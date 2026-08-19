@@ -25,3 +25,4 @@ terraform.tfstate.backup
 terraform.tfvars
 rke2-key.pem
 rke2-key/
+rke2-key

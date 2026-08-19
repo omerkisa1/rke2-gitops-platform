@@ -1,0 +1,22 @@
+django:
+  replicaCount: 2
+  image:
+    repository: omerkisa1/django-web
+    tag: k8s
+    pullPolicy: Always
+  port: 8000
+
+postgres:
+  image:
+    repository: postgres
+    tag: 16-alpine
+  port: 5432
+
+secrets:
+  postgresUser: YWRtaW4=
+  postgresPassword: YWRtaW4=
+
+ingress:
+  enabled: true
+  className: nginx
+  path: /
