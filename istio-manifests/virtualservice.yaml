@@ -16,7 +16,7 @@ spec:
         host: socket-service
         port:
           number: 8765
-    timeout: 0s
+    timeout: 1s
   - match:
     - uri:
         prefix: /health
