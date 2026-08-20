@@ -1,0 +1,32 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: socket-vs
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - socket-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /ws
+    route:
+    - destination:
+        host: socket-service
+        port:
+          number: 8765
+    timeout: 0s
+  - match:
+    - uri:
+        prefix: /health
+    route:
+    - destination:
+        host: socket-service
+        port:
+          number: 8765
+  - route:
+    - destination:
+        host: django-service
+        port:
+          number: 8000
