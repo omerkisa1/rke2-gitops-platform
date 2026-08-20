@@ -92,3 +92,13 @@ resource "openstack_networking_secgroup_rule_v2" "rke2_secgroup_rule" {
   remote_ip_prefix  = "0.0.0.0/0"
   security_group_id = openstack_networking_secgroup_v2.rke2_secgroup.id
 }
+
+resource "openstack_networking_secgroup_rule_v2" "istio-ws" {
+  direction         = "ingress"
+  ethertype         = "IPv4"
+  protocol          = "tcp"
+  port_range_min    = 31918
+  port_range_max    = 31918
+  remote_ip_prefix  = "0.0.0.0/0"
+  security_group_id = openstack_networking_secgroup_v2.rke2_secgroup.id
+}
