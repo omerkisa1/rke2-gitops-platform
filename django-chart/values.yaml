@@ -1,5 +1,5 @@
 django:
-  replicaCount: 4
+  replicaCount: 1
   image:
     repository: omerkisa1/django-web
     tag: k8s
