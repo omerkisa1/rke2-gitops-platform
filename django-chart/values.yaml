@@ -20,3 +20,17 @@ ingress:
   enabled: true
   className: nginx
   path: /
+
+jenkins:
+  namespace: jenkins
+  ingressClass: nginx
+  host: jenkins.omerkisa.com
+  serviceName: jenkins
+  servicePort: 8080
+
+argocd:
+  namespace: argocd
+  ingressClass: nginx
+  host: argocd.omerkisa.com
+  serviceName: argocd-server
+  servicePort: 80
