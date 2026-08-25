@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: socket-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/omerkisa1/rke2-gitops-platform
+    targetRevision: HEAD
+    path: socket-app
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
