@@ -51,3 +51,8 @@ resource "openstack_compute_instance_v2" "worker" {
     uuid = openstack_networking_network_v2.rke2_network.id
   }
 }
+
+
+output "master1_public_ip" {
+  value = openstack_networking_floatingip_v2.master_floatingip.address
+}
