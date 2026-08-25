@@ -2,23 +2,23 @@ apiVersion: v1
 entries:
   django-chart:
   - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-08-25T16:02:09.448817294+03:00"
+    description: Django + PostgreSQL Kubernetes deployment
+    digest: 4d8df96f785aac5807a891419d46762947a2b1b35066e7795f4f8965471e29bc
+    name: django-chart
+    type: application
+    urls:
+    - https://omerkisa1.github.io/rke2-gitops-platform/charts/django-chart-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
     appVersion: 1.16.0
-    created: "2026-08-25T15:59:39.149567659+03:00"
+    created: "2026-08-25T16:02:09.448157587+03:00"
     description: A Helm chart for Kubernetes
     digest: 6fd1acc775c37ed94b4466495721553efa8439abcc00e3e26832bf0da77fa842
     name: django-chart
     type: application
     urls:
-    - django-chart-0.1.0.tgz
+    - https://omerkisa1.github.io/rke2-gitops-platform/charts/django-chart-0.1.0.tgz
     version: 0.1.0
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2026-08-25T15:59:39.150541661+03:00"
-    description: Django + PostgreSQL Kubernetes deployment
-    digest: 1737b648025cb3b063f091a77fd302e8c1f7e7be3ff2105bfe0577d7c9ed8047
-    name: django-chart
-    type: application
-    urls:
-    - django-chart-1.0.0.tgz
-    version: 0.1.0
-generated: "2026-08-25T15:59:39.14907887+03:00"
+generated: "2026-08-25T16:02:09.447602344+03:00"
