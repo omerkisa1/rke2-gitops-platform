@@ -34,7 +34,7 @@ resource "openstack_compute_instance_v2" "worker" {
   count = 2
 
   name            = "rke2-worker-${count.index + 1}"
-  flavor_id       = var.micro_flavor_id
+  flavor_id       = var.medium_flavor_id
   key_pair        = openstack_compute_keypair_v2.rke2-key.name
   security_groups = [openstack_networking_secgroup_v2.rke2_secgroup.name]
 
