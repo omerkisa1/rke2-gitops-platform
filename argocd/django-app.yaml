@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://omerkisa1.github.io/rke2-gitops-platform/charts
     chart: django-chart
-    targetRevision: 1.0.0
+    targetRevision: 1.0.1
 
   destination:
     server: https://kubernetes.default.svc
