@@ -26,3 +26,5 @@ terraform.tfvars
 rke2-key.pem
 rke2-key/
 rke2-key
+cinder-check.tf
+cloud.conf

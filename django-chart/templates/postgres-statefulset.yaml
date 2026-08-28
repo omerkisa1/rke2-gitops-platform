@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+spec:
+  serviceName: postgres-headless
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: postgres
+
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: {{ .Values.postgres.image.repository }}:{{ .Values.postgres.image.tag }}
+
+        envFrom:
+        - secretRef:
+            name: postgres-secret
+
+        env:
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+
+        ports:
+        - containerPort: {{ .Values.postgres.port }}
+
+        volumeMounts:
+        - name: postgres-data
+          mountPath: /var/lib/postgresql/data
+
+  volumeClaimTemplates:
+  - metadata:
+      name: postgres-data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      storageClassName: cinder-sc
+      resources:
+        requests:
+          storage: 5Gi
